@@ -1,16 +1,15 @@
 ## Criação de Base de dados, admin e models e seu Admin.
 
 #### 1º Passo.
-   * Pip install Django
-   * Pip install pillow
-   * Pip install mysqlclient
+>   * Pip install Django
+>   * Pip install pillow
+>   * Pip install mysqlclient
 ---
 #### 2º Passo.
 Iniciando o projeto
-   * Django-admin startproject __blog__ .  <( ponto no final é necessario para nao acriar duas pastas )
-Esta sera a pasta Mean do programa.
-
-Blog sera sua pasta principal
+>   * Django-admin startproject __blog__ .  <( ponto no final é necessario para nao acriar duas pastas )
+   
+__blog__ sera sua pasta principal.
 
 ---
 #### 3º Passo.
@@ -18,13 +17,13 @@ Criando os apps
 Craicao de sub pastas, para a divisao de seu site. Entre no terminal e digite.
 
 Categorias
-   * python manage.py startapp categorias
+>   * python manage.py startapp categorias
    
 Post
-   * python manage.py startapp posts
+>   * python manage.py startapp posts
    
 Comentarios
-   * python manage.py startapp comentarios
+>   * python manage.py startapp comentarios
 
 Em Setting da pasta principal __Blog__ - INSTALLED_APPS
 
@@ -68,7 +67,7 @@ Cheque seu __Host__ e __Post__
 
 ---
 #### 6º Passo.
-Mudando a linguagem do site para PT/Brasil
+Mudando a linguagem do site para __PT/Brasil__
 
 ```
 LANGUAGE_CODE = 'pt-BR'
@@ -180,7 +179,7 @@ urlpatterns = [
 ```
 
 Calabos:
-    * views.PostIndex.as_view()
+>    * views.PostIndex.as_view()
     
 ---
 #### 13º Passo.
@@ -195,7 +194,7 @@ def __str__(self):
 ```
 Ao invés de aparecer o nome do objeto sera mostrado o nome da categoria por isso usamos do ```def __str__(self): return self.nome_cat ```
 
-    * Ligando isso agora no Admin
+>    * Ligando isso agora no Admin
 Categoria em __admin.py__ 
 
 ```
@@ -240,10 +239,10 @@ Imagem dia mes e ano e direcionando onde irar salvas (upload_to=‘post_img/%Y/%
         return self.titulo_post
 ```    
 
-     * verbose_name=' ‘ 
+>     * verbose_name=' ‘ 
 transforma o nome para o escolhido)
 
-    * (upload_to=‘post_img/%Y/%m?%d') 
+>    * (upload_to=‘post_img/%Y/%m?%d') 
 
 Imagem dia mes e ano e direcionando onde irar salvas 
 
@@ -270,24 +269,24 @@ admin.site.register(PostAdmin, Post)
 #### 15º Passo.
 ##### Vamos ver se ate aqui esta ocorrendo tudo corretamente realizando a função Makemigrationse Migrate no terminal.
 
-    * Python manege.py makemigrations
+>    * Python manege.py makemigrations
 Obs: se over algum erro recomendo uma pesquisa no google, ai sera testada suas skills de deiteive.
 
 Em seguida
-    * python manage.py migrate
+>    * python manage.py migrate
 Ira fazer todas as migrações
 
 ---
 #### 16º Passo.
 Criação do espaço do admin, para isso usamos o __Superuser__ abrindo novamento o terminal.
 
-    * python manage.py createsuperuser
+>    * python manage.py createsuperuser
 Apos isso digite seu nome de __user__ / __email__ / __senha__ / __confirme a senha__
 
-    * pathon manage.py run server
+>    * pathon manage.py run server
 Para fazer rodar o seridor
 
->Agora deve clicar no link do servidor ( lembrando a pagina nao estará pronta ) No link a cima __http://127.0.0.1:8000__ deve ser adicionado __/admin__ para >entrar na area do admin do server ( __http://127.0.0.1:8000/admin__ ) inserindo o usuario e senha criado anteriormente.
+>Agora deve clicar no link do servidor ( lembrando a pagina nao estará pronta ) No link a cima ```__http://127.0.0.1:8000__ ```deve ser adicionado ```__/admin__``` para >entrar na area do admin do server ( ```__http://127.0.0.1:8000/admin__``` ) inserindo o usuario e senha criado anteriormente.
 
 ---
 #### 17º Passo.
@@ -333,15 +332,15 @@ class ComentariosAdmin(admin.ModelAdmin):
 
 admin.site.register(Comentario, ComentariosAdmin)
 ```
-    * display
+>    * display
 >Sera mostrado.
-    * Editable
+>    * Editable
 >Sera editado
-    * display_link
+>    * display_link
 >Sera mostrado e sera um clic link para entrar 
 
 Como feito anteriormente no terminal, __python manage.py makemigration__ em seguida __python manage.py migrate__
->Com isso ja sera possível ver as alterações na pagina admin faca um teste e crie um post.
+Com isso ja sera possível ver as alterações na pagina admin faca um teste e crie um post.
 
 ---
 #### 18º Passo.
@@ -351,7 +350,7 @@ __Blog__ em __settings.py__ adicionar ultimas linhas o __Summernote__ ( Editor d
 ```
 INSTALLED_APPS += ('django_summernote', )
 ```
-    * Caso seja Mac adicione junto
+>    * Caso seja Mac adicione junto
 ```
 X_FRAME_OPTIONS = 'SAMEORIGIN' 
 ```
