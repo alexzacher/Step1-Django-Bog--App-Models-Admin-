@@ -1,6 +1,5 @@
 ## Criação de Base de dados, admin e models e seu Admin.
 
-
 #### 1º Passo.
 >   * Pip install Django
 >   * Pip install pillow
